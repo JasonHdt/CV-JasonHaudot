@@ -12,8 +12,13 @@
         <div class="contactcarte">
             <div class="mainpic"><img src="images/placeholder.png" alt="Photo de Jason Haudot"></div>
             <div class="flags">        
-                <button onclick="setLang('fr')"><img src="images/france.png" alt=""></button>
-                <button onclick="setLang('en')"><img src="images/uk.webp" alt=""></button>
+                <button class="flags-btn" onclick="setLang('fr', this)">
+                    <img src="images/france.png" alt="">
+                  </button>
+                  <button class="flags-btn" onclick="setLang('en', this)">
+                    <img src="images/uk.webp" alt="">
+                  </button>
+                  
             </div>
             <h1>Jason HAUDOT</h1>
             <ul class="listcontact">
@@ -32,12 +37,16 @@
         <h2 data-i18n="aboutme"></h2>
         <div class="separation"></div>
 <div class="aboutme">
-
     <div class="aboutmespeak" data-i18n="aboutmespeak">
  
 </div>
-</div>
 
+</div>
+<h2 data-i18n="competence"></h2>
+<div class="separation"></div>
+<div class="competencetools">
+    
+</div>
     </main>
     <footer>
     </footer>

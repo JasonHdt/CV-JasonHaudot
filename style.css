@@ -45,6 +45,7 @@ h2 {
     font-size: 36px;
     text-transform: uppercase;
     color: #292929;
+    margin-top: 20px;
 
 }
 
@@ -98,6 +99,14 @@ color: #292929;
     .contactcarte a:hover {
         color:tomato
     }
+    .contactcarte a::before {
+        color:tomato;
+content: "「";
+            }
+            .contactcarte a::after {
+                content: "」";
+                color: tomato;
+                            }
 .mainpic img {
     height: 200px;
     width: auto;    
@@ -185,16 +194,18 @@ box-shadow: 0px 7px 4px 0px rgba(0,0,0,0.25);
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.3rem;
     width: 25px;
     height: 17px;
     margin: 5px;
+}
+.flags button.active {
+border: tomato 2px solid;
 }
 .separation {
     width: 70%;
     background-color: #808080;
     height: 5px;
-    margin: 20px;
+    margin-bottom: 30px;
     position: relative;
 }
 .separation::before {

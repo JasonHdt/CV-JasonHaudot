@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 32px;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+}
+h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 32px;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    color: #292929;
+
+}
+
+h2 {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #292929;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+/* TOP  */
+.icons {
+    margin-top: 25px;
+}
+.contactcarte {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: #808080 solid 6px;
+padding: 16px;
+background-color: #e6e6e6;
+
+}
+.contactcarte img {
+width: 25px;
+height: auto;
+margin-right: 5px;
+}
+.contactcarte a {
+font-size: 25px;
+text-transform: uppercase;
+font-family: "Roboto Condensed", sans-serif;
+font-optical-sizing: auto;
+font-weight: bold;
+font-style: normal;
+color: #292929;
+    }
+
+.mainpic img {
+    height: 200px;
+    width: auto;    
+    margin-bottom: 20px;
+    -webkit-border-radius: 200px; /* Saf3+, Chrome */
+    border-radius: 200px; /* Opera 10.5, IE 9 */
+    border-bottom: #808080 solid 6px;
+
+}
+
+.listcontact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+/* TOP END  */
+
+.aboutme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Condensed", sans-serif;
+font-optical-sizing: auto;
+font-weight: normal;
+font-style: normal;
+margin: auto;
+flex-direction: column;
+}
+
+.aboutmespeak::before {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 36px;
+    color: #292929;
+    position: absolute;
+top : 0%;
+left : -10%;
+
+content: "“";
+}
+.aboutmespeak::after {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 36px;
+    color: #292929;
+content: "”";
+position:absolute;
+bottom: -5%;
+right: -10%;
+}
+.aboutmespeak p {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.aboutmespeak {
+    position: relative;
+    width: 80%;
+    text-align: justify;
+}
+
+strong {
+    font-size: 26px;
+text-transform: uppercase;
+font-family: "Roboto Condensed", sans-serif;
+font-optical-sizing: auto;
+font-weight: bold;
+font-style: normal;
+color: #292929;
+}
+.separation {
+    width: 70%;
+    background-color: #808080;
+    height: 5px;
+    margin: 20px;
+    position: relative;
+}
+.separation::before {
+    content: "♦";
+    position: absolute;
+top: -25px;
+left: -30px;
+font-size: 40px;
+color: tomato;
+}
+.separation::after {
+    content: "♦";
+    position: absolute;
+bottom: -20px;
+right: -30px;
+font-size: 40px;
+color: tomato;
+
+    }
+    

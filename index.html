@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Page de Présentation</title>
+    <title data-i18n="titrepage">Ma Page de Présentation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header>  
+
         <div class="contactcarte">
             <div class="mainpic"><img src="images/placeholder.png" alt="Photo de Jason Haudot"></div>
+            <div class="flags">        
+                <button onclick="setLang('fr')"><img src="images/france.png" alt=""></button>
+                <button onclick="setLang('en')"><img src="images/uk.webp" alt=""></button>
+            </div>
             <h1>Jason HAUDOT</h1>
             <ul class="listcontact">
-            <li><div class="icons"><img src="images/github.svg" alt="GitHub"><span class="topmessage"><a href="https://github.com/JasonHdt">Mon GitHub</a></span>
+            <li><div class="icons"><img src="images/github.svg" alt="GitHub"><span class="topmessage"><a href="https://github.com/JasonHdt">GitHub</a></span>
             </div></li>
 
             <li><div class="icons"><img src="images/envelope.svg" alt="Adresse mail"><span class="topmessage"><a href="mailto:jasonhaudot@gmail.com">Jasonhaudot@gmail.com</a></span>
@@ -24,19 +29,12 @@
         </div>
     </header>
     <main>
-        <h2>A propos de moi</h2>
+        <h2 data-i18n="aboutme"></h2>
         <div class="separation"></div>
 <div class="aboutme">
 
-    <div class="aboutmespeak">
-    <p>Bonjour, moi c'est <strong>Jason</strong>. 
-    et depuis mon plus jeune âge je me suis intéressé à l'informatique et comme n'importe quel gamin de cet âge je rêvais de faire des jeux vidéos. Puis, plus tard, je me suis intéressé au graphisme, à l'illustration, et aujourd'hui je découvre et apprends le code en autodidacte et souhaite amélioré cet apprentissage d'une façon professionnel afin d'obtenir les bases en <strong>HTML</strong>, <strong>CSS</strong> et <strong>Javascript</strong>. </p>
-    <p>Mes loisirs tournent souvent autour de l'animation 2D/3D, des jeux de plateaux et de l'art. Je ne manque pas d'imagination !</p>
-    <p>Je suis débutant mais très motivé, je souhaite transformer cette passion en métier grace à mes compétences actuelles sans jamais arrêter de les développer et j'espère qu'elles serviront à contribuer à des projets au sein d'une équipe dynamique.</p>
-    <p>Ce CV interactif et réactif a été réalisé après mon plateau professionnalisant chez Numérica, je l'ai travaillé un peu tous les jours pendant ma formation diplomante. J'espère qu'il vous plaira à lire.</p>
-    <p style ="text-align: right; margin-bottom: 0;">Cordialement,</p>
-    <p style="text-align: right;"><strong>Jason Haudot</strong></p>
-
+    <div class="aboutmespeak" data-i18n="aboutmespeak">
+ 
 </div>
 </div>
 

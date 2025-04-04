@@ -191,7 +191,6 @@ main {
 }
 
 .aboutmespeak p {
-    margin-bottom: 10px;
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -348,19 +347,24 @@ main {
     }
 }
 
+.aboutmespeak span {
+    position: relative;
+}
 .aboutmespeak span:hover {
     color: tomato
 }
 
 .aboutmespeak span::before {
     color: tomato;
-    content: "「";
+    content: "<";
 }
 
 .aboutmespeak span::after {
-    content: "」";
+    content: ">";
     color: tomato;
 }
+
+/* POP UP */
 
 .popup-overlay {
     position: fixed;
@@ -376,18 +380,42 @@ main {
 }
 
 .popup-content {
-    background: white;
+    background: linear-gradient(#f1ffab, #EAD3AA);
     padding: 20px;
     max-width: 400px;
-    border-radius: 10px;
+    border-radius: 15px;
     position: relative;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 #popup-close {
     position: absolute;
-    top: 5px;
-    right: 10px;
+    top: 2px;
+    right: 8px;
     cursor: pointer;
     font-size: 20px;
+}
+.popup-content::before {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 36px;
+    color: #f1ffab;
+    position: absolute;
+    top: 0%;
+    left: -7%;
+
+    content: "“";
+}
+
+.popup-content::after {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 36px;
+    color: #f1ffab;
+    content: "”";
+    position: absolute;
+    bottom: 0;
+    right: -7%;
 }

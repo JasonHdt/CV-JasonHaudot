@@ -27,15 +27,9 @@ function initPopups() {
   const popupClose = document.getElementById('popup-close');
 
   const popupContents = {
-    DWWM: "Le titre de Développeur Web et Web Mobile (DWWM) est une formation qui forme aux compétences de création de sites web et d'applications responsives.",
-    charte: "La charte graphique est un document qui rassemble l’ensemble des règles fondamentales d’utilisation des signes graphiques d’une entreprise.",
-    veille: "La veille professionnelle consiste à s'informer en continu sur les nouvelles technologies, tendances et bonnes pratiques du métier.",
-    tools: "J'utilise des outils comme VS Code, Figma, Git, Trello, etc. pour organiser et réaliser mes projets.",
-    autodidact: "J’ai appris de nombreuses compétences en me formant seul, en ligne, grâce à des tutoriels et de la documentation.",
-    autonome: "L’autonomie me permet de prendre des initiatives et d’organiser mon travail efficacement, même sans supervision constante.",
-    loisir: "Mes projets personnels autour de mes loisirs (jeux, musique, etc.) m’ont permis de progresser techniquement.",
-    experiencepro: "Mon expérience pro est encore jeune, mais je suis motivé et prêt à m’investir à 100% dans le domaine."
-  };
+// id:"text"
+DAQ : "Dispositif en Amont à la Qualification. Ceci est un dispositif destinée à orienter les personnes à la recherche d'emplois et de formations qualifiantes."
+};
 
   Object.keys(popupContents).forEach(id => {
     const element = document.getElementById(id);

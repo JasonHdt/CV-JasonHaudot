@@ -181,7 +181,7 @@ margin-top: 100;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    animation: cvpan 10s linear infinite;
+    animation: cvpan 100s linear infinite;
     z-index: 0;
 }
 #cv-content {

@@ -1,62 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="titrepage">Ma Page de Présentation</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title">CV - Jason Haudot</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>  
+  <!-- Section avec fond + clip -->
+   <div id="overallbg">
+  <header id="contact-container">
+    <div id="pattern-container">
+      <div id="contact-pattern"></div>
+      <div id="contact-vignette"></div>
 
-        <div class="contactcarte">
-            <div class="mainpic"><img src="images/placeholder.png" alt="Photo de Jason Haudot"></div>
-            <div class="flags">        
-                <button class="flags-btn" onclick="setLang('fr', this)">
-                    <img src="images/france.png" alt="">
-                  </button>
-                  <button class="flags-btn" onclick="setLang('en', this)">
-                    <img src="images/uk.webp" alt="">
-                  </button>
-                  
-            </div>
-            <h1>Jason HAUDOT</h1>
-            <ul class="listcontact">
-            <li><div class="icons"><img src="images/github.svg" alt="GitHub"><span class="topmessage"><a href="https://github.com/JasonHdt">GitHub</a></span>
-            </div></li>
+      <!-- Header déplacé ici -->
+      <div id="contact-content">
+                <!-- Image de profil -->
+                <div id="contact-img">
+                    <img src="/images/cestmoi.jpg" alt="Photo de Jason Haudot" />
+                  </div>
+          
+        <h1>Jason Haudot</h1>
 
-            <li><div class="icons"><img src="images/envelope.svg" alt="Adresse mail"><span class="topmessage"><a href="mailto:jasonhaudot@gmail.com">Jasonhaudot@gmail.com</a></span>
-            </div></li>
-            <li><div class="icons"><img src="images/phone.svg" alt="Téléphone"><span class="topmessage"><a href="tel:+33646252849">+33 6 46 25 28 49</a></span>
-            </div></li>
-        </ul>
 
+        <!-- Sélecteurs de langue -->
+        <div id="flags-container">
+          <button class="flags-btn" onclick="setLang('fr', this)">
+            <img src="images/france.png" alt="FR" />
+          </button>
+          <button class="flags-btn" onclick="setLang('en', this)">
+            <img src="images/uk.webp" alt="EN" />
+          </button>
         </div>
-    </header>
-    <main>
-        <h2 data-i18n="aboutme"></h2>
-        <div class="separation"></div>
-<div class="aboutme">
-    <div class="aboutmespeak" data-i18n="aboutmespeak">
- 
-</div>
 
-</div>
-<h2 data-i18n="competence"></h2>
-<div class="separation"></div>
-    
-</div>
-    </main>
-    <footer>
-    </footer>
-    <!-- POP UP -->
-    <div id="popup" class="popup-overlay" style="display:none;">
-        <div class="popup-content">
-          <span id="popup-close">&times;</span>
-          <p id="popup-text"></p>
+        <!-- Liens de contact -->
+        <div id="contact-list">
+          <div class="icons">
+            <span class="topmessage">
+              <a href="https://github.com/JasonHdt">
+                <img src="images/github.svg" alt="GitHub" />
+              </a>
+            </span>
+          </div>
+          <div class="icons">
+            <span class="topmessage">
+              <a href="mailto:jasonhaudot@gmail.com">
+                <img src="images/envelope.svg" alt="Email" />
+              </a>
+            </span>
+          </div>
+          <div class="icons">
+            <span class="topmessage">
+              <a href="tel:+33646252849">
+                <img src="images/phone.svg" alt="Téléphone" />
+              </a>
+            </span>
+          </div>
         </div>
-      </div>
-      
-    <script src="scripts/script.js"></script>
+    </div>
+    </div>
+</header>
+
+  <!-- Contenu principal -->
+  <main id="cv-container">
+    <div id="cv-pattern"></div>
+    <div id="cv-content">
+       <h2 data-i18n="aboutme"></h2> 
+      <p data-i18n="aboutmespeak">Contenu du CV ici...</p>
+    </div>
+  </main>
+</div>
+  <script src="/scripts/script.js"></script>
 </body>
 </html>

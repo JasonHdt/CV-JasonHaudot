@@ -1,0 +1,23 @@
+# Palette principale inspirée de l’image
+
+# Couleur principale
+# Un rouge profond comme la capuche : parfait pour l'identité visuelle forte
+PRIMARY: #8B2C2A
+
+# Couleur secondaire
+# Un beige sable inspiré des murs du fond : pour les fonds ou sections neutres
+SECONDARY: #D9C6A3
+
+# Couleur d’accent
+# Or brillant comme les pièces : parfait pour les boutons ou hover
+ACCENT: #F2B43D
+
+# Couleurs neutres (fond, texte, séparateurs)
+TEXT: #1C1C1C         # Presque noir, pour une bonne lisibilité
+BACKGROUND: #F9F5ED   # Beige très clair, doux pour les yeux
+BORDER: #A68D6E       # Marron clair/gris pour bordures discrètes
+HIGHLIGHT: #524336    # Brun foncé utilisé avec parcimonie pour donner du contraste
+
+# Variante possible
+DARKER_PRIMARY: #641F1D
+LIGHT_SECONDARY: #F3E9D4

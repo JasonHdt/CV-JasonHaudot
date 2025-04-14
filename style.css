@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #8B2C2A;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 body {
@@ -13,6 +19,14 @@ body {
   
 }
 
+footer{
+  background-color: #8B2C2A;
+  height: 100px;
+}
+
+.subh2 {
+  border-bottom: 2px #8B2C2A solid;
+}
 /* === HEADER / CONTACT SECTION === */
 
 #contact-container {
@@ -189,7 +203,6 @@ margin-top: 100;
     position: relative;
     z-index: 2;
     display: flex;
-    text-align: left;
     margin: auto;
     width: 80%;
     flex-wrap: wrap;
@@ -197,6 +210,8 @@ margin-top: 100;
 }
 #cv-content p{
     margin-top: 8px ;
+    text-align: justify;
+
 }
 #cv-content h2 {
     font-family: "EB Garamond", serif;
@@ -252,12 +267,12 @@ margin-top: 100;
         animation: pan 25s linear infinite;
     }
     #cv-content {
-        padding: 5px 50px 5px 50px;
+        padding: 0px 50px 5px 50px;
         position: relative;
         z-index: 2;
         display: flex;
         margin: auto;
-        width: 90%;
+        width: 100%;
         flex-wrap: wrap;
         text-align: left;
     }
@@ -265,10 +280,10 @@ margin-top: 100;
         font-family: "EB Garamond", serif;
         font-optical-sizing: auto;
         font-style: normal;
-        font-size: 18px;
+        font-size: 24px;
         text-transform: uppercase;
         color: #524336;
-        margin-top: 10px;
+        margin-top: 5px;
     
     }
   }

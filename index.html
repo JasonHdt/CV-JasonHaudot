@@ -5,20 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="title">CV - Jason Haudot</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Optimisation du chargement sans import CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <!-- Section avec fond + clip -->
-   <div id="overallbg">
+  <!-- HEADER -->
   <header id="contact-container">
     <div id="pattern-container">
       <div id="contact-pattern"></div>
       <div id="contact-vignette"></div>
 
-      <!-- Header déplacé ici -->
+      <!-- CONTACT CONTENT -->
       <div id="contact-content">
                 <!-- Image de profil -->
                 <div id="contact-img">
-                    <img src="/images/cestmoi.jpg" alt="Photo de Jason Haudot" />
+                    <img src="/images/cestmoi.webp" alt="Photo de Jason Haudot" />
                   </div>
           
         <h1>Jason Haudot</h1>
@@ -27,7 +31,7 @@
         <!-- Sélecteurs de langue -->
         <div id="flags-container">
           <button class="flags-btn" onclick="setLang('fr', this)">
-            <img src="images/france.png" alt="FR" />
+            <img src="images/france.webp" alt="FR" />
           </button>
           <button class="flags-btn" onclick="setLang('en', this)">
             <img src="images/uk.webp" alt="EN" />
@@ -69,8 +73,14 @@
        <h2 data-i18n="aboutme"></h2> 
       <p data-i18n="aboutmespeak"></p>
     </div>
+    <div id="cv-comp">
+        <h2 data-i18n="competence" class="subh2"></h2>
+        <p data-i18n="comp-content"></p>
+      </div>
   </main>
-</div>
+  <footer>
+
+  </footer>
   <script src="/scripts/script.js"></script>
 </body>
 </html>

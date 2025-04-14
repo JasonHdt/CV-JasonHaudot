@@ -248,6 +248,12 @@ margin-top: 100;
     bottom: -25px;
     right: 0%;
 }
+.comp-container {
+padding: 10px;
+border: 3px #2b2c36 solid;
+margin: 10px;
+}
+
 @keyframes cvpan {
     from { background-position: 100% 0%; }
     to   { background-position: 0% 0%; }

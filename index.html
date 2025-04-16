@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+  <!-- Defer permet de load le script après le HTML -->
+  <script defer src="/scripts/script.js"></script>
 </head>
 <body>
   <!-- HEADER -->
@@ -71,20 +72,40 @@
     <div id="cv-pattern"></div>
     <div id="cv-content">
        <h2 data-i18n="aboutme"></h2> 
-      <p data-i18n="aboutmespeak"></p>
+      <p data-i18n="aboutmespeak">
     </div>
-    <div id="cv-comp">
-        <h2 data-i18n="competence" class="subh2"></h2>
-        <p data-i18n="comp-content"></p>
+    <!-- Compétences & Atouts (DESKTOP)  -->
+     <div class="hidden-on-mobile">
+      <div>
+      <h2 data-i18n="competenceatout" class="subh2" style="justify-content: center;"> 
+      </h2></div><div class="flexcompt">
+      <div class="competenceatout">
+      <p data-i18n="comp-content"></p>
+    </div>
+    <div class="competenceatout">
+    <p data-i18n="atout-content"></p>
+  </div></div>
+
+     </div>
+    <!-- Compétences (MOBILE) -->
+    <div id="cv-comp" class="accordion hidden-on-desktop">
+        <h2 data-i18n="competence" class="subh2 accordion-header"> 
+        </h2>
+        <div class="accordion-content">
+        <p data-i18n="comp-content">
+          </p>
+        </div>
       </div>
-      <div id="cv-atouts">
-        <h2 data-i18n="atout" class="subh2" style="text-align: right;"></h2>
-        <p data-i18n="atout-content"></p>
+      <!-- Atouts (MOBILE) -->
+      <div id="cv-atouts" class="accordion hidden-on-desktop">
+        <h2 data-i18n="atout" class="subh2 accordion-header" style="text-align: right;"></h2>
+        <div class="accordion-content">
+        <p data-i18n="atout-content"></p></div>
       </div>
   </main>
   <footer>
 
   </footer>
-  <script src="/scripts/script.js"></script>
+
 </body>
 </html>

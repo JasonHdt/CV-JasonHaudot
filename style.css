@@ -5,6 +5,13 @@
   margin: 0;
 }
 
+button {
+  all: unset;
+}
+.hidden-on-desktop {
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: #8B2C2A;
@@ -28,6 +35,25 @@ footer{
   border-bottom: 2px #8B2C2A solid;
   color: #8B2C2A;
   margin-top: 36px;
+  /*  */
+  padding: 8px 48px 8px 16px;
+  min-height: 56px;
+  line-height: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+}
+
+.accordion.open .arrow {
+  transform: rotate(180deg); /* fait pointer vers le haut */
 }
 /* === HEADER / CONTACT SECTION === */
 
@@ -91,10 +117,6 @@ margin-top: 100;
   z-index: 0;
 }
 
-@keyframes pan {
-  from { background-position: 0% 0%; }
-  to   { background-position: 100% 0%; }
-}
 
 #contact-vignette {
   background: linear-gradient(circle, transparent 75%, #524336);
@@ -185,12 +207,12 @@ margin-top: 100;
     border-bottom: #8B2C2A dashed 10px;
     padding: 5px;
 
-
 }
 #cv-pattern {
     background-image: url('/images/stacked-steps-haikei.svg');
     background-repeat: repeat;
-    opacity: .2;
+    mix-blend-mode: multiply;
+    opacity: .25;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -201,10 +223,11 @@ margin-top: 100;
     z-index: 0;
 }
 #cv-content {
-    padding: 20px;
+    padding: 0px 50px 5px 50px;
     position: relative;
     z-index: 2;
     display: flex;
+    flex-direction: column;
     margin: auto;
     width: 80%;
     flex-wrap: wrap;
@@ -253,13 +276,96 @@ margin-top: 100;
 .comp-container {
 padding: 10px;
 border: 3px #2b2c36 solid;
-margin: 10px;
+margin: 10px auto 10px auto;
+}
+.comp-container h3 {
+  color: #8B2C2A;
+}
+.competenceatout {
+  width: 40%;
 }
 
-@keyframes cvpan {
-    from { background-position: 100% 0%; }
-    to   { background-position: 0% 0%; }
+.accordion-content {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+}
+
+.accordion.open .accordion-content {
+  max-height: 1000px; /* Assez grand pour tout contenu */
+  transition: max-height 1s ease-in;
+}
+.hidden-on-mobile {
+  display: block;
+}
+
+.hidden {
+  
+  display: flex;
+  flex-direction: column  ;
+  filter: blur(5px);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 3s;
+}
+.flexcompt {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+.content {
+  transition: all 1s ease;
+}
+.content.show:nth-child(1) {
+  transition-delay: 100;
+}
+.content.show:nth-child(2) {
+  transition-delay: 200;
+}
+.content.show:nth-child(3) {
+  transition-delay: 300;
+}
+.content.show:nth-child(4) {
+  transition-delay: 400;
+}
+.content.show:nth-child(5) {
+  transition-delay: 500;
+}
+
+
+@media(prefer-reduced-motion){
+  .animation-slide {
+  transition: none;
   }
+}
+@keyframes cvpan {
+  from {
+    background-position: 199% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+
+  }
+  @keyframes pan {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 199% 0;
+    }
+  }
+  
 
   @media (max-width: 450px) {
     #contact-container {
@@ -272,10 +378,9 @@ margin: 10px;
       );
     }
     #contact-pattern {
-        animation: pan 25s linear infinite;
+        animation: pan 20s linear infinite;
     }
     #cv-content {
-        padding: 0px 50px 5px 50px;
         position: relative;
         z-index: 2;
         display: flex;
@@ -294,4 +399,34 @@ margin: 10px;
         margin-top: 5px;
     
     }
+    .comp-container {
+      width: 90%;
+      padding: 10px;
+      border: 3px #2b2c36 solid;
+      margin: 10px auto 10px auto;
+      }
+      .comp-container h3 {
+        color: #8B2C2A;
+      }
+
+    #cv-pattern {
+      background-image: url('/images/stacked-steps-haikei.svg');
+      background-repeat: repeat;
+      mix-blend-mode: multiply;
+
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: cvpan 20s linear infinite;
+      z-index: 0;
+  }
+  .hidden-on-desktop {
+    display: block;
+  }
+  .hidden-on-mobile {
+    display: none;
+  }
   }

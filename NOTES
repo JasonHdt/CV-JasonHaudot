@@ -13,7 +13,7 @@ SECONDARY: #D9C6A3
 
 # Couleur d’accent
 # Or brillant comme les pièces : parfait pour les boutons ou hover
-ACCENT: #F2B43D
+ACCENT: #ffee6a
 
 # Couleurs neutres (fond, texte, séparateurs)
 TEXT: #1C1C1C         # Presque noir, pour une bonne lisibilité

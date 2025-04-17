@@ -3,8 +3,24 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  cursor: none !important;
+  }
+  #custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: url('/images/custom_cursor.svg') no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 10000;
+    opacity: 1;
+  }
+  
+header {
+  height: 100vh;
 }
-
 button {
   all: unset;
 }
@@ -17,7 +33,32 @@ a {
   color: #8B2C2A;
   text-transform: uppercase;
   font-weight: bold;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2 ease;
 }
+
+a:hover {
+  color: #da2b28;
+}
+
+strong {
+  font-family: 'EB Garamond', serif;
+  color: #524336 ;
+  text-transform: uppercase;
+  text-shadow: 0px 1px 1px #2b2c36;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
@@ -59,38 +100,39 @@ footer{
 
 #contact-container {
   position: relative;
-  height: 450px;
+  height: 350px;
   background: radial-gradient(#D9C6A3, #A68D6E);
   clip-path: polygon(
-    0% 0%, 100% 0%, 100% 85%,
-    98.75% 80%, 97.5% 85%, 96.25% 80%,
-    95% 85%, 93.75% 80%, 92.5% 85%,
-    91.25% 80%, 90% 85%, 88.75% 80%,
-    87.5% 85%, 86.25% 80%, 85% 85%,
-    83.75% 80%, 82.5% 85%, 81.25% 80%,
-    80% 85%, 78.75% 80%, 77.5% 85%,
-    76.25% 80%, 75% 85%, 73.75% 80%,
-    72.5% 85%, 71.25% 80%, 70% 85%,
-    68.75% 80%, 67.5% 85%, 66.25% 80%,
-    65% 85%, 63.75% 80%, 62.5% 85%,
-    61.25% 80%, 60% 85%, 58.75% 80%,
-    57.5% 85%, 56.25% 80%, 55% 85%,
-    53.75% 80%, 52.5% 85%, 51.25% 80%,
-    50% 85%, 48.75% 80%, 47.5% 85%,
-    46.25% 80%, 45% 85%, 43.75% 80%,
-    42.5% 85%, 41.25% 80%, 40% 85%,
-    38.75% 80%, 37.5% 85%, 36.25% 80%,
-    35% 85%, 33.75% 80%, 32.5% 85%,
-    31.25% 80%, 30% 85%, 28.75% 80%,
-    27.5% 85%, 26.25% 80%, 25% 85%,
-    23.75% 80%, 22.5% 85%, 21.25% 80%,
-    20% 85%, 18.75% 80%, 17.5% 85%,
-    16.25% 80%, 15% 85%, 13.75% 80%,
-    12.5% 85%, 11.25% 80%, 10% 85%,
-    8.75% 80%, 7.5% 85%, 6.25% 80%,
-    5% 85%, 3.75% 80%, 2.5% 85%,
-    1.25% 80%, 0% 85%
-  );
+  0% 0%, 100% 0%, 100% 95%,
+  98.75% 90%, 97.5% 95%, 96.25% 90%,
+  95% 95%, 93.75% 90%, 92.5% 95%,
+  91.25% 90%, 90% 95%, 88.75% 90%,
+  87.5% 95%, 86.25% 90%, 85% 95%,
+  83.75% 90%, 82.5% 95%, 81.25% 90%,
+  80% 95%, 78.75% 90%, 77.5% 95%,
+  76.25% 90%, 75% 95%, 73.75% 90%,
+  72.5% 95%, 71.25% 90%, 70% 95%,
+  68.75% 90%, 67.5% 95%, 66.25% 90%,
+  65% 95%, 63.75% 90%, 62.5% 95%,
+  61.25% 90%, 60% 95%, 58.75% 90%,
+  57.5% 95%, 56.25% 90%, 55% 95%,
+  53.75% 90%, 52.5% 95%, 51.25% 90%,
+  50% 95%, 48.75% 90%, 47.5% 95%,
+  46.25% 90%, 45% 95%, 43.75% 90%,
+  42.5% 95%, 41.25% 90%, 40% 95%,
+  38.75% 90%, 37.5% 95%, 36.25% 90%,
+  35% 95%, 33.75% 90%, 32.5% 95%,
+  31.25% 90%, 30% 95%, 28.75% 90%,
+  27.5% 95%, 26.25% 90%, 25% 95%,
+  23.75% 90%, 22.5% 95%, 21.25% 90%,
+  20% 95%, 18.75% 90%, 17.5% 95%,
+  16.25% 90%, 15% 95%, 13.75% 90%,
+  12.5% 95%, 11.25% 90%, 10% 95%,
+  8.75% 90%, 7.5% 95%, 6.25% 90%,
+  5% 95%, 3.75% 90%, 2.5% 95%,
+  1.25% 90%, 0% 95%
+);
+
   overflow: hidden;
 }
 
@@ -98,6 +140,7 @@ footer{
 
 #pattern-container {
 margin-top: 100;
+min-height: 50vh;
   position: relative;
   overflow: hidden;
 }
@@ -113,7 +156,7 @@ margin-top: 100;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  animation: pan 100s linear infinite;
+  animation: pan 280s linear infinite;
   z-index: 0;
 }
 
@@ -129,15 +172,13 @@ margin-top: 100;
 /* === CONTENU HEADER === */
 
 #contact-content {
-    padding: 20px;
+  padding: 20px 20px 0 20px;
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  text-align: center;
 }
 
 #contact-content h1 {
@@ -146,11 +187,6 @@ margin-top: 100;
   color: #F9F5ED;
   text-transform: uppercase;
   text-shadow: 0px 2px #2b2c36;
-  margin-bottom: 16px;
-}
-
-#contact-img {
-  margin-bottom: 16px;
 }
 
 #contact-img img {
@@ -158,8 +194,8 @@ margin-top: 100;
   width: 150px;
   object-fit: cover;
   border-radius: 50%;
-  border: 10px dotted #F9F5ED;
-  border-bottom: 5px solid #F9F5ED;
+  border: 10px dotted #ffee6a;
+  border-bottom: 5px solid #ffee6a;
 
 }
 
@@ -194,18 +230,21 @@ margin-top: 100;
 }
 
 .icons img:hover {
-  transform: scale(1.1);
-  filter: invert(19%) sepia(29%) saturate(4820%) hue-rotate(343deg) brightness(91%) contrast(84%);
-
+  transform: scale(1.5);
+  filter: invert(89%) sepia(81%) saturate(491%) hue-rotate(329deg) brightness(104%) contrast(103%);
+  mix-blend-mode: hard-light;
+  opacity: .7;
 }
 
 
 #cv-container {
     position: relative;
-    background-color: #eae7dc;
+    background-color: #D9C6A3;
     border-top: #8B2C2A dashed 10px;
     border-bottom: #8B2C2A dashed 10px;
     padding: 5px;
+    
+    
 
 }
 #cv-pattern {
@@ -230,8 +269,12 @@ margin-top: 100;
     flex-direction: column;
     margin: auto;
     width: 80%;
+    justify-content: center;
+    min-height: 50vh;
     flex-wrap: wrap;
     text-align: left;
+    background-color: transparent;
+
 }
 #cv-content p{
     margin-top: 8px ;
@@ -277,6 +320,7 @@ margin-top: 100;
 padding: 10px;
 border: 3px #2b2c36 solid;
 margin: 10px auto 10px auto;
+background-color: #F9F5ED;
 }
 .comp-container h3 {
   color: #8B2C2A;
@@ -327,21 +371,20 @@ margin: 10px auto 10px auto;
   transition: all 1s ease;
 }
 .content.show:nth-child(1) {
-  transition-delay: 100;
+  transition-delay: 200ms;
 }
 .content.show:nth-child(2) {
-  transition-delay: 200;
+  transition-delay: 400ms;
 }
 .content.show:nth-child(3) {
-  transition-delay: 300;
+  transition-delay: 600ms;
 }
 .content.show:nth-child(4) {
-  transition-delay: 400;
+  transition-delay: 800ms;
 }
 .content.show:nth-child(5) {
-  transition-delay: 500;
+  transition-delay: 1000ms;
 }
-
 
 @media(prefer-reduced-motion){
   .animation-slide {
@@ -369,16 +412,22 @@ margin: 10px auto 10px auto;
 
   @media (max-width: 450px) {
     #contact-container {
+      height: 350px;
       clip-path: polygon(
-        0% 0%, 100% 0%, 100% 85%,
-        90% 80%, 80% 85%, 70% 80%,
-        60% 85%, 50% 80%, 40% 85%,
-        30% 80%, 20% 85%, 10% 80%,
-        0% 85%
+        0% 0%, 100% 0%, 100% 93%,
+        95.83% 90%, 91.66% 93%, 87.5% 90%,
+        83.33% 93%, 79.16% 90%, 75% 93%,
+        70.83% 90%, 66.66% 93%, 62.5% 90%,
+        58.33% 93%, 54.16% 90%, 50% 93%,
+        45.83% 90%, 41.66% 93%, 37.5% 90%,
+        33.33% 93%, 29.16% 90%, 25% 93%,
+        20.83% 90%, 16.66% 93%, 12.5% 90%,
+        8.33% 93%, 4.16% 90%, 0% 93%
       );
+      
     }
     #contact-pattern {
-        animation: pan 20s linear infinite;
+        animation: pan 40s linear infinite;
     }
     #cv-content {
         position: relative;
@@ -420,8 +469,11 @@ margin: 10px auto 10px auto;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      animation: cvpan 20s linear infinite;
+      animation: cvpan 50s linear infinite;
       z-index: 0;
+  }
+  #custom-cursor{
+    display: none;
   }
   .hidden-on-desktop {
     display: block;

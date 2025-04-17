@@ -30,8 +30,11 @@ async function setLang(lang, btn = null) {
     
       document.querySelectorAll('[data-i18n="atout-content"] .comp-container').forEach((el) => {
         el.classList.add('content', 'hidden');
-        pendingElements.push(el);
-
+        if (hasScrolled) {
+          observer.observe(el);
+        } else {
+          pendingElements.push(el);
+        }
       });
     }
 
@@ -88,3 +91,13 @@ document.querySelectorAll('[data-i18n="comp-content"] .comp-container, [data-i18
   .forEach(el => {
     el.classList.add('hidden', 'content');
   });
+
+  if (window.innerWidth > 450) {
+    
+    document.addEventListener('mousemove', (e) => {
+      const cursor = document.getElementById('custom-cursor');
+      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    
+  }
+  

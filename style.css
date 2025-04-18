@@ -1,10 +1,18 @@
+/* === Base typographique (1rem = 10px) === */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
 
+
+/* === Réinitialisation générale et curseur personnalisé === */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   cursor: none !important;
+  font-size: 1.6rem;
   }
+/* === Style du curseur personnalisé === */
   #custom-cursor {
     position: fixed;
     top: 0;
@@ -18,19 +26,22 @@
     opacity: 1;
   }
   
+/* === Structure de base du layout === */
 header {
   height: 100vh;
 }
 button {
   all: unset;
 }
+/* === Gestion de l'affichage masqué/animé === */
 .hidden-on-desktop {
   display: none;
 }
 
+/* === Liens stylisés === */
 a {
   text-decoration: none;
-  color: #8B2C2A;
+  color: #3E9CCC;
   text-transform: uppercase;
   font-weight: bold;
   display: inline-block;
@@ -40,12 +51,13 @@ a {
 }
 
 a:hover {
-  color: #da2b28;
+  color: #ea413e;
 }
 
+/* === Style des textes forts === */
 strong {
   font-family: 'EB Garamond', serif;
-  color: #524336 ;
+  color: #3E9CCC ;
   text-transform: uppercase;
   text-shadow: 0px 1px 1px #2b2c36;
 }
@@ -60,84 +72,91 @@ strong {
 }
 
 
+/* === Style global de la page === */
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: #8B2C2A;
-  color: #2b2c36;
-  
+  background-color: #F5F0E1;
+  color: #D9C6A3;
 }
 
+/* === Pied de page === */
 footer{
-  background-color: #8B2C2A;
+  background-color: #F5F0E1;
   height: 100px;
 }
 
+/* === Titres secondaires et accordéon === */
 .subh2 {
-  border-bottom: 2px #8B2C2A solid;
-  color: #8B2C2A;
+  border-bottom: 2px #3E9CCC solid;
+  color: #D9C6A3;
   margin-top: 36px;
-  /*  */
+  font-family: 'EB Garamond', serif;
+  font-size: 2.6rem;
+  text-transform: uppercase;
   padding: 8px 48px 8px 16px;
   min-height: 56px;
-  line-height: 12px;
+  line-height: 1.2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   position: relative;
-  cursor: pointer;
 }
 
+/* === Flèche de l'accordéon === */
 .arrow {
   font-size: 1rem;
   transition: transform 0.3s ease;
   margin-left: 10px;
 }
 
+/* === Flèche de l'accordéon === */
 .accordion.open .arrow {
   transform: rotate(180deg); /* fait pointer vers le haut */
 }
 /* === HEADER / CONTACT SECTION === */
 
+/* === Conteneur principal du header avec forme décorative === */
 #contact-container {
   position: relative;
   height: 350px;
-  background: radial-gradient(#D9C6A3, #A68D6E);
+  background: radial-gradient(#7c809d, #4A4E69);
   clip-path: polygon(
-  0% 0%, 100% 0%, 100% 95%,
-  98.75% 90%, 97.5% 95%, 96.25% 90%,
-  95% 95%, 93.75% 90%, 92.5% 95%,
-  91.25% 90%, 90% 95%, 88.75% 90%,
-  87.5% 95%, 86.25% 90%, 85% 95%,
-  83.75% 90%, 82.5% 95%, 81.25% 90%,
-  80% 95%, 78.75% 90%, 77.5% 95%,
-  76.25% 90%, 75% 95%, 73.75% 90%,
-  72.5% 95%, 71.25% 90%, 70% 95%,
-  68.75% 90%, 67.5% 95%, 66.25% 90%,
-  65% 95%, 63.75% 90%, 62.5% 95%,
-  61.25% 90%, 60% 95%, 58.75% 90%,
-  57.5% 95%, 56.25% 90%, 55% 95%,
-  53.75% 90%, 52.5% 95%, 51.25% 90%,
-  50% 95%, 48.75% 90%, 47.5% 95%,
-  46.25% 90%, 45% 95%, 43.75% 90%,
-  42.5% 95%, 41.25% 90%, 40% 95%,
-  38.75% 90%, 37.5% 95%, 36.25% 90%,
-  35% 95%, 33.75% 90%, 32.5% 95%,
-  31.25% 90%, 30% 95%, 28.75% 90%,
-  27.5% 95%, 26.25% 90%, 25% 95%,
-  23.75% 90%, 22.5% 95%, 21.25% 90%,
-  20% 95%, 18.75% 90%, 17.5% 95%,
-  16.25% 90%, 15% 95%, 13.75% 90%,
-  12.5% 95%, 11.25% 90%, 10% 95%,
-  8.75% 90%, 7.5% 95%, 6.25% 90%,
-  5% 95%, 3.75% 90%, 2.5% 95%,
-  1.25% 90%, 0% 95%
-);
-
+    0% 0%, 100% 0%, 100% 94%,
+    98.75% 93%, 97.5% 94%, 96.25% 93%,
+    95% 94%, 93.75% 93%, 92.5% 94%,
+    91.25% 93%, 90% 94%, 88.75% 93%,
+    87.5% 94%, 86.25% 93%, 85% 94%,
+    83.75% 93%, 82.5% 94%, 81.25% 93%,
+    80% 94%, 78.75% 93%, 77.5% 94%,
+    76.25% 93%, 75% 94%, 73.75% 93%,
+    72.5% 94%, 71.25% 93%, 70% 94%,
+    68.75% 93%, 67.5% 94%, 66.25% 93%,
+    65% 94%, 63.75% 93%, 62.5% 94%,
+    61.25% 93%, 60% 94%, 58.75% 93%,
+    57.5% 94%, 56.25% 93%, 55% 94%,
+    53.75% 93%, 52.5% 94%, 51.25% 93%,
+    50% 94%, 48.75% 93%, 47.5% 94%,
+    46.25% 93%, 45% 94%, 43.75% 93%,
+    42.5% 94%, 41.25% 93%, 40% 94%,
+    38.75% 93%, 37.5% 94%, 36.25% 93%,
+    35% 94%, 33.75% 93%, 32.5% 94%,
+    31.25% 93%, 30% 94%, 28.75% 93%,
+    27.5% 94%, 26.25% 93%, 25% 94%,
+    23.75% 93%, 22.5% 94%, 21.25% 93%,
+    20% 94%, 18.75% 93%, 17.5% 94%,
+    16.25% 93%, 15% 94%, 13.75% 93%,
+    12.5% 94%, 11.25% 93%, 10% 94%,
+    8.75% 93%, 7.5% 94%, 6.25% 93%,
+    5% 94%, 3.75% 93%, 2.5% 94%,
+    1.25% 93%, 0% 94%
+  );
+  z-index: 1;
   overflow: hidden;
 }
 
 /* === FOND EN PLUMES + VIGNETTE === */
 
+/* === Fond animé en motif (header) === */
 #pattern-container {
 margin-top: 100;
 min-height: 50vh;
@@ -171,6 +190,7 @@ min-height: 50vh;
 
 /* === CONTENU HEADER === */
 
+/* === Contenu du header (photo, titre, langues, icônes) === */
 #contact-content {
   padding: 20px 20px 0 20px;
   position: relative;
@@ -181,10 +201,11 @@ min-height: 50vh;
   justify-content: center;
 }
 
+/* === Contenu du header (photo, titre, langues, icônes) === */
 #contact-content h1 {
   font-family: 'EB Garamond', serif;
-  font-size: 36px;
-  color: #F9F5ED;
+  font-size: 3.6rem;
+  color: #D9C6A3;
   text-transform: uppercase;
   text-shadow: 0px 2px #2b2c36;
 }
@@ -194,13 +215,14 @@ min-height: 50vh;
   width: 150px;
   object-fit: cover;
   border-radius: 50%;
-  border: 10px dotted #ffee6a;
-  border-bottom: 5px solid #ffee6a;
+  border: 10px dotted #D9C6A3;
+  border-bottom: 5px solid #D9C6A3;
 
 }
 
 /* === LANGUAGES === */
 
+/* === Sélecteurs de langues === */
 #flags-container {
   display: flex;
   gap: 12px;
@@ -211,11 +233,11 @@ min-height: 50vh;
   height: 25px;
   width: 40px;
   border-radius: 4px;
-  cursor: pointer;
 }
 
 /* === CONTACT ICONS === */
 
+/* === Liste des icônes de contact === */
 #contact-list {
   display: flex;
   gap: 12px;
@@ -227,6 +249,7 @@ min-height: 50vh;
   height: 30px;
   width: auto;
   transition: transform 0.2s ease;
+  filter: invert(100%);
 }
 
 .icons img:hover {
@@ -237,18 +260,20 @@ min-height: 50vh;
 }
 
 
+/* === Conteneur principal du CV === */
 #cv-container {
     position: relative;
-    background-color: #D9C6A3;
-    border-top: #8B2C2A dashed 10px;
-    border-bottom: #8B2C2A dashed 10px;
+    background-color: #4A4E69;
     padding: 5px;
-    
-    
+    z-index: 0;
+min-height: 120px;      /* Assure que le clip-path est visible */
+padding-bottom: 120px;   /* Espace entre contenu et la "découpe" */
+margin-top: -25px;
 
 }
+/* === Fond décoratif du CV === */
 #cv-pattern {
-    background-image: url('/images/stacked-steps-haikei.svg');
+    background-image: url('/images/pattern.svg');
     background-repeat: repeat;
     mix-blend-mode: multiply;
     opacity: .25;
@@ -261,6 +286,7 @@ min-height: 50vh;
     animation: cvpan 100s linear infinite;
     z-index: 0;
 }
+/* === Contenu central du CV (sections) === */
 #cv-content {
     padding: 0px 50px 5px 50px;
     position: relative;
@@ -276,28 +302,31 @@ min-height: 50vh;
     background-color: transparent;
 
 }
+/* === Contenu central du CV (sections) === */
 #cv-content p{
     margin-top: 8px ;
     text-align: justify;
 
 }
+/* === Contenu central du CV (sections) === */
 #cv-content h2 {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-size: 36px;
+    font-size: 3.6rem;
     text-transform: uppercase;
-    color: #524336;
+    color: #D9C6A3;
     margin-top: 20px;
 
 }
 
+/* === Contenu central du CV (sections) === */
 #cv-content::before {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-size: 72px;
-    color: #292929;
+    font-size: 7.2rem;
+    color: #D9C6A3;
     position: absolute;
     top: 0%;
     left: 0%;
@@ -305,30 +334,37 @@ min-height: 50vh;
     content: "“";
 }
 
+/* === Contenu central du CV (sections) === */
 #cv-content::after {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-size: 72px;
-    color: #292929;
+    font-size: 7.2rem;
+    color: #D9C6A3;
     content: "”";
     position: absolute;
     bottom: -25px;
     right: 0%;
 }
+/* === Bloc contenant les compétences ou atouts === */
 .comp-container {
 padding: 10px;
-border: 3px #2b2c36 solid;
+border: 3px #2B2C36 solid;
 margin: 10px auto 10px auto;
-background-color: #F9F5ED;
+background-color: #F5F0E1;
 }
+/* === Bloc contenant les compétences ou atouts === */
 .comp-container h3 {
   color: #8B2C2A;
+}
+.comp-container p {
+  color: #2B2C36;
 }
 .competenceatout {
   width: 40%;
 }
 
+/* === Contenu déroulant de l'accordéon === */
 .accordion-content {
   display: flex;
   flex-direction: column;
@@ -338,14 +374,17 @@ background-color: #F9F5ED;
   transition: max-height 1s ease-out;
 }
 
+/* === Contenu déroulant de l'accordéon === */
 .accordion.open .accordion-content {
   max-height: 1000px; /* Assez grand pour tout contenu */
   transition: max-height 1s ease-in;
 }
+/* === Gestion de l'affichage masqué/animé === */
 .hidden-on-mobile {
   display: block;
 }
 
+/* === Gestion de l'affichage masqué/animé === */
 .hidden {
   
   display: flex;
@@ -355,6 +394,7 @@ background-color: #F9F5ED;
   opacity: 0;
   transition: all 3s;
 }
+/* === Disposition des compétences/atouts côte à côte === */
 .flexcompt {
   display: flex;
   justify-content: space-around;
@@ -362,6 +402,7 @@ background-color: #F9F5ED;
   align-items: center;
 }
 
+/* === État visible animé d’un bloc caché === */
 .show {
   opacity: 1;
   filter: blur(0);
@@ -370,27 +411,34 @@ background-color: #F9F5ED;
 .content {
   transition: all 1s ease;
 }
+/* === État visible animé d’un bloc caché === */
 .content.show:nth-child(1) {
   transition-delay: 200ms;
 }
+/* === État visible animé d’un bloc caché === */
 .content.show:nth-child(2) {
   transition-delay: 400ms;
 }
+/* === État visible animé d’un bloc caché === */
 .content.show:nth-child(3) {
   transition-delay: 600ms;
 }
+/* === État visible animé d’un bloc caché === */
 .content.show:nth-child(4) {
   transition-delay: 800ms;
 }
+/* === État visible animé d’un bloc caché === */
 .content.show:nth-child(5) {
   transition-delay: 1000ms;
 }
 
+/* === Accessibilité : désactive les animations si préférée === */
 @media(prefer-reduced-motion){
   .animation-slide {
   transition: none;
   }
 }
+/* === Animation horizontale de fond CV (cvpan) === */
 @keyframes cvpan {
   from {
     background-position: 199% 0;
@@ -400,6 +448,7 @@ background-color: #F9F5ED;
   }
 
   }
+/* === Animation horizontale de fond (pan) === */
   @keyframes pan {
     from {
       background-position: 0 0;
@@ -410,7 +459,9 @@ background-color: #F9F5ED;
   }
   
 
+/* === Adaptation responsive pour mobile (max 450px) === */
   @media (max-width: 450px) {
+/* === Conteneur principal du header avec forme décorative === */
     #contact-container {
       height: 350px;
       clip-path: polygon(
@@ -426,9 +477,12 @@ background-color: #F9F5ED;
       );
       
     }
+      
+    }
     #contact-pattern {
         animation: pan 40s linear infinite;
     }
+/* === Contenu central du CV (sections) === */
     #cv-content {
         position: relative;
         z-index: 2;
@@ -438,31 +492,34 @@ background-color: #F9F5ED;
         flex-wrap: wrap;
         text-align: left;
     }
+/* === Contenu central du CV (sections) === */
     #cv-content h2 {
         font-family: "EB Garamond", serif;
         font-optical-sizing: auto;
         font-style: normal;
-        font-size: 24px;
+        font-size: 2.4rem;
         text-transform: uppercase;
-        color: #524336;
+        color: #D9C6A3;
         margin-top: 5px;
     
     }
+/* === Bloc contenant les compétences ou atouts === */
     .comp-container {
       width: 90%;
       padding: 10px;
       border: 3px #2b2c36 solid;
       margin: 10px auto 10px auto;
       }
+/* === Bloc contenant les compétences ou atouts === */
       .comp-container h3 {
         color: #8B2C2A;
       }
 
+/* === Fond décoratif du CV === */
     #cv-pattern {
-      background-image: url('/images/stacked-steps-haikei.svg');
+      background-image: url('/images/pattern.svg');
       background-repeat: repeat;
       mix-blend-mode: multiply;
-
       height: 100%;
       width: 100%;
       position: absolute;
@@ -472,12 +529,21 @@ background-color: #F9F5ED;
       animation: cvpan 50s linear infinite;
       z-index: 0;
   }
+  #cv-container {
+    min-height: 120px;      /* Assure que le clip-path est visible */
+    padding-bottom: 250px;   /* Espace entre contenu et la "découpe" */
+    margin-top: -25px;
+margin-top: -37px;}
+
+/* === Style du curseur personnalisé === */
   #custom-cursor{
     display: none;
   }
+/* === Gestion de l'affichage masqué/animé === */
   .hidden-on-desktop {
     display: block;
   }
+/* === Gestion de l'affichage masqué/animé === */
   .hidden-on-mobile {
     display: none;
   }

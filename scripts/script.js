@@ -1,6 +1,19 @@
+// === VARIABLES ET OBSERVATEUR ===
 const pendingElements = [];
 let hasScrolled = false;
 
+// Observer pour l'animation lors de l'apparition dans le viewport
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  });
+});
+
+// Gestion du scroll pour activer l'observation des éléments différés
 window.addEventListener('scroll', () => {
   if (hasScrolled) return;
   hasScrolled = true;
@@ -9,55 +22,56 @@ window.addEventListener('scroll', () => {
   pendingElements.length = 0;
 }, { once: true });
 
-// === Gestion des langues ===
+// === FONCTION DE CHANGEMENT DE LANGUE ===
 async function setLang(lang, btn = null) {
   try {
     const res = await fetch(`./lang/${lang}.json`);
     const data = await res.json();
 
+    // Injection des traductions dans les éléments HTML
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (data[key]) {
-        el.innerHTML = data[key]; // Injection du HTML traduit
+        el.innerHTML = data[key];
       }
     });
-    // Après avoir injecté le HTML
-    if (window.innerWidth > 450) {
-      document.querySelectorAll('[data-i18n="comp-content"] .comp-container').forEach((el) => {
-        el.classList.add('content', 'hidden');
-        observer.observe(el);
-      });
-    
-      document.querySelectorAll('[data-i18n="atout-content"] .comp-container').forEach((el) => {
-        el.classList.add('content', 'hidden');
-        if (hasScrolled) {
-          observer.observe(el);
-        } else {
-          pendingElements.push(el);
-        }
-      });
-    }
 
+    // Ajout des classes et observation des blocs après injection
+    document.querySelectorAll('[data-i18n="comp-content"] .comp-container').forEach((el) => {
+      el.classList.add('content', 'hidden');
+      observer.observe(el);
+    });
+
+    document.querySelectorAll('[data-i18n="atout-content"] .comp-container').forEach((el) => {
+      el.classList.add('content', 'hidden');
+      if (hasScrolled) {
+        observer.observe(el);
+      } else {
+        pendingElements.push(el);
+      }
+    });
+
+    // Mise à jour de l'état actif du bouton de langue
     document.querySelectorAll(".flags-btn").forEach((b) => b.classList.remove("active"));
     if (btn) btn.classList.add("active");
 
-    initPopups();       // Réactive les éventuels popups
-    initAccordion();    // Réactive les clics de l'accordéon après injection
+    initPopups();     // Réinitialisation des popups
+    initAccordion();  // Réinitialisation de l'accordéon
 
   } catch (err) {
     console.error("Erreur de chargement des traductions :", err);
   }
 }
 
-// === Langue par défaut au chargement de la page ===
+// === INITIALISATION AU CHARGEMENT ===
 window.onload = () => {
   const savedLang = localStorage.getItem("lang") || "fr";
   const activeBtn = document.querySelector(`.flags-btn[onclick*="${savedLang}"]`);
   setLang(savedLang, activeBtn);
-  initAccordion(); // Au cas où le contenu est déjà là
+  initAccordion();
 };
 
-// === Accordéon ===
+// === ACCORDÉON ===
 function initAccordion() {
   const accordions = document.querySelectorAll(".accordion");
 
@@ -71,19 +85,7 @@ function initAccordion() {
   });
 }
 
-// Afficher pendant un scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
-  });
-}, {
-});
-
-
+// === INITIALISATION DES BLOCS CACHÉS ===
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
@@ -92,12 +94,10 @@ document.querySelectorAll('[data-i18n="comp-content"] .comp-container, [data-i18
     el.classList.add('hidden', 'content');
   });
 
-  if (window.innerWidth > 450) {
-    
-    document.addEventListener('mousemove', (e) => {
-      const cursor = document.getElementById('custom-cursor');
-      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-    
-  }
-  
+// === CURSEUR PERSONNALISÉ (DESKTOP UNIQUEMENT) ===
+if (window.innerWidth > 450) {
+  document.addEventListener('mousemove', (e) => {
+    const cursor = document.getElementById('custom-cursor');
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+}

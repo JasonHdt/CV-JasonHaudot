@@ -4,32 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="title">CV - Jason Haudot</title>
+
+  <!-- Feuilles de style -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Optimisation du chargement sans import CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <!-- Defer permet de load le script après le HTML -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+  <!-- Script JS différé pour ne pas bloquer le rendu -->
   <script defer src="/scripts/script.js"></script>
 </head>
+
 <body>
-  <!-- FAUX CURSEUR -->
-  <div id="custom-cursor"></div>
-  <!-- HEADER -->
+
+  <!-- Curseur personnalisé (desktop uniquement) -->
+  <div id="custom-cursor hidden-on-mobile"></div>
+
+  <!-- ====== HEADER ====== -->
   <header id="contact-container">
     <div id="pattern-container">
       <div id="contact-pattern"></div>
       <div id="contact-vignette"></div>
 
-      <!-- CONTACT CONTENT -->
+      <!-- Informations de contact -->
       <div id="contact-content">
-                <!-- Image de profil -->
-                <div id="contact-img">
-                    <img src="/images/cestmoi.webp" alt="Photo de Jason Haudot" />
-                  </div>
-          
-        <h1>Jason Haudot</h1>
 
+        <!-- Photo de profil -->
+        <div id="contact-img">
+          <img src="/images/cestmoi.webp" alt="Photo de Jason Haudot" />
+        </div>
+
+        <h1>Jason Haudot</h1>
 
         <!-- Sélecteurs de langue -->
         <div id="flags-container">
@@ -65,54 +70,57 @@
             </span>
           </div>
         </div>
-    </div>
-    </div>
-</header>
 
-  <!-- Contenu principal -->
+      </div> <!-- #contact-content -->
+    </div> <!-- #pattern-container -->
+  </header>
+
+  <!-- ====== CONTENU PRINCIPAL ====== -->
   <main id="cv-container">
     <div id="cv-pattern"></div>
-    <section id="cv-content">
-       <h2 data-i18n="aboutme"></h2> 
-      <p data-i18n="aboutmespeak">
-    </section>
-    <!-- Compétences & Atouts (DESKTOP)  -->
-     <div class="hidden-on-mobile">
-      <div>
-      <h2 data-i18n="competenceatout" class="subh2" style="justify-content: center;"> 
-      </h2></div><div class="flexcompt">
-      <div class="competenceatout">
-      <p data-i18n="comp-content"></p>
-    </div>
-    <div class="competenceatout">
-      <div data-i18n="atout-content"></div>
-  </div></div>
 
-     </div>
-     <!-- Expériences + Software used (Desktop)-->
-     <!-- hobbies (DESKTOP) -->
-    <!-- Compétences (MOBILE) -->
-    <div id="cv-comp" class="accordion hidden-on-desktop">
-        <h2 data-i18n="competence" class="subh2 accordion-header"> 
-        </h2>
-        <div class="accordion-content">
-        <p data-i18n="comp-content">
-          </p>
+    <!-- Section À propos -->
+    <section id="cv-content">
+      <h2 data-i18n="aboutme"></h2>
+      <p data-i18n="aboutmespeak"></p>
+    </section>
+
+    <!-- Compétences & Atouts (version desktop) -->
+    <div class="hidden-on-mobile">
+      <div>
+        <h2 data-i18n="competenceatout" class="subh2" style="justify-content: center;"></h2>
+      </div>
+      <div class="flexcompt">
+        <div class="competenceatout">
+          <p data-i18n="comp-content"></p>
+        </div>
+        <div class="competenceatout">
+          <div data-i18n="atout-content"></div>
         </div>
       </div>
-      <!-- Atouts (MOBILE) -->
-      <div id="cv-atouts" class="accordion hidden-on-desktop">
-        <h2 data-i18n="atout" class="subh2 accordion-header" style="text-align: right;"></h2>
-        <div class="accordion-content">
-          <div data-i18n="atout-content"></div>
-      </div>  
-      <!-- Experience per job (mobile)-->
-       <!-- Hobbys with details (mobile)-->
-        <!-- Software often used in Hobby with details (mobile) -->
+    </div>
+
+    <!-- Section compétences (version mobile) -->
+    <div id="cv-comp" class="hidden-on-desktop">
+      <h2 data-i18n="competence" class="subh2"></h2>
+      <p data-i18n="comp-content"></p>
+    </div>
+
+    <!-- Section atouts (version mobile) -->
+    <div id="cv-atouts" class="hidden-on-desktop">
+      <h2 data-i18n="atout" class="subh2" style="text-align: right;"></h2>
+      <div data-i18n="atout-content"></div>
+    </div>
+
+    <!-- Placeholders pour expériences, hobbies, logiciels (à remplir si nécessaire) -->
+    <!-- Expériences (desktop/mobile) -->
+    <!-- Hobbies avec détails -->
+    <!-- Logiciels utilisés avec détails -->
 
   </main>
-  <footer>
 
+  <!-- Pied de page -->
+  <footer>
   </footer>
 
 </body>

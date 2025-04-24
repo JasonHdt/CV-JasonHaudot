@@ -94,10 +94,3 @@ document.querySelectorAll('[data-i18n="comp-content"] .comp-container, [data-i18
     el.classList.add('hidden', 'content');
   });
 
-// === CURSEUR PERSONNALISÉ (DESKTOP UNIQUEMENT) ===
-if (window.innerWidth > 450) {
-  document.addEventListener('mousemove', (e) => {
-    const cursor = document.getElementById('custom-cursor');
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-  });
-}

@@ -13,13 +13,10 @@
 
   <!-- Script JS différé pour ne pas bloquer le rendu -->
   <script defer src="/scripts/script.js"></script>
+
 </head>
 
 <body>
-
-  <!-- Curseur personnalisé (desktop uniquement) -->
-  <div id="custom-cursor hidden-on-mobile"></div>
-
   <!-- ====== HEADER ====== -->
   <header id="contact-container">
     <div id="pattern-container">
@@ -88,32 +85,38 @@
     <!-- Compétences & Atouts (version desktop) -->
     <div class="hidden-on-mobile">
       <div>
-        <h2 data-i18n="competenceatout" class="subh2" style="justify-content: center;"></h2>
+        <h2 data-i18n="competenceatout" class="subh2"></h2>
       </div>
-      <div class="flexcompt">
+      <section class="flexcompt">
         <div class="competenceatout">
           <p data-i18n="comp-content"></p>
         </div>
         <div class="competenceatout">
           <div data-i18n="atout-content"></div>
         </div>
-      </div>
+      </section>
     </div>
 
     <!-- Section compétences (version mobile) -->
-    <div id="cv-comp" class="hidden-on-desktop">
+    <section id="cv-comp" class="hidden-on-desktop">
       <h2 data-i18n="competence" class="subh2"></h2>
       <p data-i18n="comp-content"></p>
-    </div>
+    </section>
 
     <!-- Section atouts (version mobile) -->
-    <div id="cv-atouts" class="hidden-on-desktop">
-      <h2 data-i18n="atout" class="subh2" style="text-align: right;"></h2>
+    <section id="cv-atouts" class="hidden-on-desktop">
+      <h2 data-i18n="atout" class="subh2"></h2>
       <div data-i18n="atout-content"></div>
-    </div>
+    </section>
 
     <!-- Placeholders pour expériences, hobbies, logiciels (à remplir si nécessaire) -->
     <!-- Expériences (desktop/mobile) -->
+     <section id="experience">
+      <h2 data-i18n="exp-title" class="subh2"></h2>
+      <p data-i18n="exp-content">
+
+      </p>
+     </section>
     <!-- Hobbies avec détails -->
     <!-- Logiciels utilisés avec détails -->
 

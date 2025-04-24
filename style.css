@@ -9,22 +9,9 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  cursor: none !important;
   font-size: 1.6rem;
   }
-/* === Style du curseur personnalisé === */
-  #custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 32px;
-    height: 32px;
-    background: url('/images/custom_cursor.svg') no-repeat center;
-    background-size: contain;
-    pointer-events: none;
-    z-index: 10000;
-    opacity: 1;
-  }
+
   
 /* === Structure de base du layout === */
 header {
@@ -32,6 +19,12 @@ header {
 }
 button {
   all: unset;
+}
+/* === Style global de la page === */
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #F5F0E1;
+  color: #D9C6A3;
 }
 /* === Gestion de l'affichage masqué/animé === */
 .hidden-on-desktop {
@@ -61,31 +54,13 @@ strong {
   text-transform: uppercase;
   text-shadow: 0px 1px 1px #2b2c36;
 }
-
-@keyframes shimmer {
-  0% {
-    background-position: 200% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
-}
-
-
-/* === Style global de la page === */
-body {
-  font-family: 'Roboto Condensed', sans-serif;
-  background-color: #F5F0E1;
-  color: #D9C6A3;
-}
-
 /* === Pied de page === */
 footer{
   background-color: #F5F0E1;
   height: 100px;
 }
 
-/* === Titres secondaires et accordéon === */
+/* === Titres secondaires === */
 .subh2 {
   border-bottom: 2px #3E9CCC solid;
   color: #D9C6A3;
@@ -100,19 +75,9 @@ footer{
   display: flex;
   align-items: center;
   position: relative;
+  justify-content: center;
 }
 
-/* === Flèche de l'accordéon === */
-.arrow {
-  font-size: 1rem;
-  transition: transform 0.3s ease;
-  margin-left: 10px;
-}
-
-/* === Flèche de l'accordéon === */
-.accordion.open .arrow {
-  transform: rotate(180deg); /* fait pointer vers le haut */
-}
 /* === HEADER / CONTACT SECTION === */
 
 /* === Conteneur principal du header avec forme décorative === */
@@ -175,7 +140,7 @@ min-height: 50vh;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  animation: pan 280s linear infinite;
+  animation: pan 350s linear infinite;
   z-index: 0;
 }
 
@@ -283,7 +248,7 @@ margin-top: -25px;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    animation: cvpan 100s linear infinite;
+    animation: cvpan 300s linear infinite;
     z-index: 0;
 }
 /* === Contenu central du CV (sections) === */
@@ -363,22 +328,6 @@ background-color: #F5F0E1;
 .competenceatout {
   width: 40%;
 }
-
-/* === Contenu déroulant de l'accordéon === */
-.accordion-content {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 1s ease-out;
-}
-
-/* === Contenu déroulant de l'accordéon === */
-.accordion.open .accordion-content {
-  max-height: 1000px; /* Assez grand pour tout contenu */
-  transition: max-height 1s ease-in;
-}
 /* === Gestion de l'affichage masqué/animé === */
 .hidden-on-mobile {
   display: block;
@@ -432,56 +381,6 @@ background-color: #F5F0E1;
   transition-delay: 1000ms;
 }
 
-/* === Accessibilité : désactive les animations si préférée === */
-@media(prefer-reduced-motion){
-  .animation-slide {
-  transition: none;
-  }
-}
-/* === Animation horizontale de fond CV (cvpan) === */
-@keyframes cvpan {
-  from {
-    background-position: 199% 0;
-  }
-  to {
-    background-position: 0% 0;
-  }
-
-  }
-/* === Animation horizontale de fond (pan) === */
-  @keyframes pan {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: 199% 0;
-    }
-  }
-  
-
-/* === Adaptation responsive pour mobile (max 450px) === */
-  @media (max-width: 450px) {
-/* === Conteneur principal du header avec forme décorative === */
-    #contact-container {
-      height: 350px;
-      clip-path: polygon(
-        0% 0%, 100% 0%, 100% 93%,
-        95.83% 90%, 91.66% 93%, 87.5% 90%,
-        83.33% 93%, 79.16% 90%, 75% 93%,
-        70.83% 90%, 66.66% 93%, 62.5% 90%,
-        58.33% 93%, 54.16% 90%, 50% 93%,
-        45.83% 90%, 41.66% 93%, 37.5% 90%,
-        33.33% 93%, 29.16% 90%, 25% 93%,
-        20.83% 90%, 16.66% 93%, 12.5% 90%,
-        8.33% 93%, 4.16% 90%, 0% 93%
-      );
-      
-    }
-      
-    }
-    #contact-pattern {
-        animation: pan 40s linear infinite;
-    }
 /* === Contenu central du CV (sections) === */
     #cv-content {
         position: relative;
@@ -515,36 +414,92 @@ background-color: #F5F0E1;
         color: #8B2C2A;
       }
 
-/* === Fond décoratif du CV === */
-    #cv-pattern {
-      background-image: url('/images/pattern.svg');
-      background-repeat: repeat;
-      mix-blend-mode: multiply;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: cvpan 50s linear infinite;
-      z-index: 0;
-  }
+
   #cv-container {
     min-height: 120px;      /* Assure que le clip-path est visible */
     padding-bottom: 250px;   /* Espace entre contenu et la "découpe" */
     margin-top: -25px;
 margin-top: -37px;}
 
-/* === Style du curseur personnalisé === */
-  #custom-cursor{
-    display: none;
+
+
+
+
+  /* === Accessibilité : désactive les animations si préférée === */
+@media(prefer-reduced-motion){
+  .animation-slide {
+  transition: none;
   }
-/* === Gestion de l'affichage masqué/animé === */
-  .hidden-on-desktop {
-    display: block;
+}
+/* === Animation horizontale de fond CV (cvpan) === */
+@keyframes cvpan {
+  from {
+    background-position: 199% 0;
   }
-/* === Gestion de l'affichage masqué/animé === */
+  to {
+    background-position: 0% 0;
+  }
+
+  }
+/* === Animation horizontale de fond (pan) === */
+  @keyframes pan {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 199% 0;
+    }
+  }
+  
+
+/* === Adaptation responsive pour mobile (max 450px) === */
+  @media (max-width: 450px) {
+/* === Conteneur principal du header avec forme décorative === */
+/* === Fond décoratif du CV === */
+#cv-pattern {
+  background-image: url('/images/pattern.svg');
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: cvpan 50s linear infinite;
+  z-index: 0;
+}
+#contact-pattern {
+  animation: pan 40s linear infinite;
+}
+
+    #custom-cursor{
+     display: none;
+      }    
+    #contact-container {
+      height: 350px;
+      clip-path: polygon(
+        0% 0%, 100% 0%, 100% 93%,
+        95.83% 90%, 91.66% 93%, 87.5% 90%,
+        83.33% 93%, 79.16% 90%, 75% 93%,
+        70.83% 90%, 66.66% 93%, 62.5% 90%,
+        58.33% 93%, 54.16% 90%, 50% 93%,
+        45.83% 90%, 41.66% 93%, 37.5% 90%,
+        33.33% 93%, 29.16% 90%, 25% 93%,
+        20.83% 90%, 16.66% 93%, 12.5% 90%,
+        8.33% 93%, 4.16% 90%, 0% 93%
+      );
+      
+    }
+    /* === Gestion de l'affichage masqué/animé === */
   .hidden-on-mobile {
     display: none;
   }
+  /* === Gestion de l'affichage masqué/animé === */
+  .hidden-on-desktop {
+    display: block;
   }
+  .subh2{
+    justify-content: left;
+  }
+    }    

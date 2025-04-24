@@ -17,7 +17,8 @@
 </head>
 
 <body>
-  <!-- ====== HEADER ====== -->
+  <!-- Bonjour ( ͡° ͜ʖ ͡°)  -->
+  <!-- ====== HEADER ====== (desktop & mobile) -->
   <header id="contact-container">
     <div id="pattern-container">
       <div id="contact-pattern"></div>
@@ -76,7 +77,7 @@
   <main id="cv-container">
     <div id="cv-pattern"></div>
 
-    <!-- Section À propos -->
+    <!-- Section À propos (desktop & mobile) -->
     <section id="cv-content">
       <h2 data-i18n="aboutme"></h2>
       <p data-i18n="aboutmespeak"></p>
@@ -109,16 +110,48 @@
       <div data-i18n="atout-content"></div>
     </section>
 
-    <!-- Placeholders pour expériences, hobbies, logiciels (à remplir si nécessaire) -->
-    <!-- Expériences (desktop/mobile) -->
-    <section id="cv-experience">
-      <h2 data-i18n="exp-title" class="subh2"></h2>
-      <div data-i18n="exp-content"></div>
+    <!-- Section Expériences (desktop) -->
+     <div class="hidden-on-mobile">
+      <div>
+        <h2 data-i18n="exp-title2" class="subh2"></h2>
+      </div>
+    <section id="cv-experience" class="flexcompt">
+      <div class="competenceatout">
+        <p data-i18n="exp-content"></p>
+      </div>
+      <!-- Images des logiciels -->
+      <div class="competenceatout">
+        <div class="tools-container">
+          <div class="tools">
+            <div class="toolsimg"><a href=""><img src="/images/VSC_icon.svg" alt="Logo Visual Code Studio"> visual code studio</a></div>
+            <div class="toolsimg"><a href="https://www.adobe.com/fr/products/photoshop.html"><img src="/images/ps_appicon.svg" alt="Logo Adobe Photoshop">Adobe Photoshop CC</a></div>
+            <div class="toolsimg"><a href="https://www.adobe.com/fr/products/illustrator.html"><img src="/images/Adobe_Illustrator_CC_icon.svg" alt="">Adobe Illustrator CC</a></div>
+            <div class="toolsimg"><a href="https://www.figma.com/"><img src="/images/Figma-logo.svg" alt="Logo de Figma">Figma</a></div>
+            <div class="toolsimg"><a href="https://github.com/JasonHdt"><img src="/images/github.svg" alt="Logo de Github">Github</a></div>
+          </div>
+          <div class="tools">
+            <div class="toolsimg"><a href=""><img src="/images/ChatGPT-Logo.svg" alt="Logo ChatGPT"> ChatGPT</a></div>
+            <div class="toolsimg"><a href="https://obsidian.md/"><img src="/images/2023_Obsidian_logo.svg" alt="Logo Obsidian">Obsidian</a></div>
+            <div class="toolsimg"><a href="https://www.clipstudio.net/fr/"><img src="/images/Clip_Studio_Paint_app_logo.png" alt="">Clip Studio Paint</a></div>
+            <div class="toolsimg"><a href="https://www.figma.com/"><img src="/images/Diagrams.net_Logo.svg" alt="Logo de Diagrams.net">Diagrams.net</a></div>
+            <div class="toolsimg"><a href="https://www.microsoft.com/fr-fr/microsoft-365"><img src="/images/Microsoft_Office_logo.png" alt="Logo de Microsoft Office">Microsoft 365</a></div>
+          </div>
+          </div>
+
+        </div>
+      </div>
     </section>
+  </div>
+      <!-- Section Expériences (mobile) -->
+      <section id="cv-experience" class="hidden-on-desktop">
+        <h2 data-i18n="exp-title" class="subh2"></h2>
+        <div data-i18n="exp-content"></div>
+      </section>
+    <!-- Section Logiciels -->
+     <section id="cv-loisirs">
 
-
-    <!-- Hobbies avec détails -->
-    <!-- Logiciels utilisés avec détails -->
+     </section>
+    <!-- Section Loisirs -->
 
   </main>
 

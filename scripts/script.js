@@ -54,6 +54,15 @@ async function setLang(lang, btn = null) {
       if (hasScrolled) observer.observe(el);
       else pendingElements.push(el);
     });
+    document
+    .querySelectorAll('.toolsimg')
+    .forEach(el => {
+      el.classList.add('content', 'hidden');
+      if (hasScrolled) 
+        observer.observe(el);
+      else 
+        pendingElements.push(el);
+    });
     // Mise à jour du bouton actif
     document.querySelectorAll('.flags-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');

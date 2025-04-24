@@ -46,7 +46,7 @@ button {
   all: unset;
 }
 
-a {
+#cv-content a {
   text-decoration: none;
   color: #3E9CCC;
   text-transform: uppercase;
@@ -57,7 +57,7 @@ a {
   transition: transform 0.2 ease;
 }
 
-a:hover {
+#cv-content a:hover {
   color: #ea413e;
 }
 
@@ -67,7 +67,7 @@ header {
 }
 
 footer {
-  background-color: #F5F0E1;
+  background-color: #2B2C36;
   height: 100px;
 }
 
@@ -339,6 +339,45 @@ footer {
   justify-content: space-around;
   margin: auto;
   align-items: center;
+  width: 80%;
+}
+
+.tools-container{
+  display: flex;
+  justify-content: space-between;
+}
+.tools{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.toolsimg, .toolsimg img {
+  margin: 0;
+  padding: 0;
+}
+.toolsimg img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.toolsimg a {
+  text-decoration: none;
+  color: #3E9CCC;
+  text-transform: uppercase;
+  font-weight: bold;
+  z-index: 1;
+  transition: transform 0.5 ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+}
+
+.toolsimg a:hover{
+    color: #ea413e;
+    transform: scale(1.05);
 }
 
 /* === 8. Animations & Accessibilité === */

@@ -379,7 +379,22 @@ footer {
     color: #ea413e;
     transform: scale(1.05);
 }
-
+#cv-language .toolsimg {
+  margin: 0;
+  padding: 0;
+}
+#cv-language .toolsimg img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+#cv-language .tools{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: space-around;
+}
 /* === 8. Animations & Accessibilité === */
 @keyframes pan {
   from { background-position: 0 0; }

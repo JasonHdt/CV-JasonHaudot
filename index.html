@@ -17,6 +17,12 @@
 </head>
 
 <body>
+  <div id="cookie-banner">
+    <p>Ce site utilise des cookies pour améliorer votre expérience. <a href="/politique-cookies.html">En savoir plus</a></p>
+    <button id="accept-cookies">Tout accepter</button>
+    <button id="decline-cookies">Tout refuser</button>
+  </div>
+  
   <!-- Bonjour ( ͡° ͜ʖ ͡°)  -->
   <!-- ====== HEADER ====== (desktop & mobile) -->
   <header id="contact-container">
@@ -29,7 +35,7 @@
 
         <!-- Photo de profil -->
         <div id="contact-img">
-          <img src="/images/cestmoi.webp" alt="Photo de Jason Haudot" />
+          <a href="index.html"><img src="/images/cestmoi.webp" alt="Photo de Jason Haudot" /></a>
         </div>
 
         <h1>Jason Haudot</h1>
@@ -184,8 +190,12 @@
   </main>
 
   <!-- Pied de page -->
-  <footer>
+  <footer id="site-footer">
+    <nav>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/politique-cookies.html">Politique des cookies</a>
+      <a href="#top">Retour en haut</a>
+    </nav>
   </footer>
-
 </body>
 </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique Cookies - Jason Haudot</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<!-- ====== HEADER ====== (desktop & mobile) -->
+<header id="contact-container">
+    <div id="pattern-container">
+      <div id="contact-pattern"></div>
+      <div id="contact-vignette"></div>
+
+      <!-- Informations de contact -->
+      <div id="contact-content">
+
+        <!-- Photo de profil -->
+        <div id="contact-img">
+          <a href="index.html"><img src="/images/cestmoi.webp" alt="Photo de Jason Haudot" /></a>
+        </div>
+
+        <h1>Jason Haudot</h1>
+
+        <!-- Sélecteurs de langue -->
+        <div id="flags-container">
+          <button class="flags-btn" onclick="setLang('fr', this)">
+            <img src="images/france.webp" alt="FR" />
+          </button>
+          <button class="flags-btn" onclick="setLang('en', this)">
+            <img src="images/uk.webp" alt="EN" />
+          </button>
+        </div>
+
+        <!-- Liens de contact -->
+        <div id="contact-list">
+          <div class="icons">
+            <span class="topmessage">
+              <a href="https://github.com/JasonHdt">
+                <img src="images/github.svg" alt="GitHub" />
+              </a>
+            </span>
+          </div>
+          <div class="icons">
+            <span class="topmessage">
+              <a href="mailto:jasonhaudot@gmail.com">
+                <img src="images/envelope.svg" alt="Email" />
+              </a>
+            </span>
+          </div>
+          <div class="icons">
+            <span class="topmessage">
+              <a href="tel:+33646252849">
+                <img src="images/phone.svg" alt="Téléphone" />
+              </a>
+            </span>
+          </div>
+        </div>
+
+      </div> <!-- #contact-content -->
+    </div> <!-- #pattern-container -->
+  </header>
+
+  <div id="cv-container">
+    <div id="cv-content">
+
+      <h1 class="subh2">Politique Cookies</h1>
+
+      <section>
+        <h2 class="subh2">1. Qu’est-ce qu’un cookie ?</h2>
+        <p>Un cookie est un petit fichier déposé sur votre terminal lors de la consultation d’un site. Il contient des informations techniques, d’authentification, de suivi ou de préférences.</p>
+      </section>
+
+      <section>
+        <h2 class="subh2">2. Cookies utilisés sur ce site</h2>
+        <ul>
+          <li><strong>Cookies strictement nécessaires</strong><br>Indispensables au fonctionnement du site (navigation, sécurité). Ils ne nécessitent pas votre consentement.</li>
+          <li><strong>Cookies de performance</strong><br>Permettent de mesurer l’audience et les statistiques de visite (ex. Google Analytics).<br>Durée : 13 mois.</li>
+          <li><strong>Cookies de préférences</strong><br>Enregistrent vos choix (langue, présentation).<br>Durée : 12 mois.</li>
+          <li><strong>Cookies de ciblage</strong><br>Collectent des données pour diffuser des publicités adaptées. (Non utilisés sur ce portfolio.)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="subh2">3. Gestion du consentement</h2>
+        <p>Au premier accès, un bandeau vous permet d’accepter ou de refuser les cookies soumis à consentement. Votre choix est conservé 6 mois.</p>
+        <p>Vous pouvez à tout moment modifier vos préférences via le lien en pied de page :</p>
+        <p><a href="#" onclick="localStorage.removeItem('cookieConsent'); location.reload(); return false;">Gérer mes préférences cookies</a></p>
+      </section>
+
+      <section>
+        <h2 class="subh2">4. Paramétrage dans votre navigateur</h2>
+        <p>Vous pouvez également désactiver ou supprimer les cookies via les paramètres de votre navigateur :</p>
+        <ul>
+          <li>Google Chrome : <em>Paramètres > Confidentialité et sécurité > Cookies et autres données de site</em></li>
+          <li>Firefox : <em>Options > Vie privée et sécurité > Cookies et données de sites</em></li>
+          <li>Safari : <em>Préférences > Confidentialité > Bloquer tous les cookies</em></li>
+          <li>Edge : <em>Paramètres > Cookies et autorisations de site > Gérer et supprimer les cookies</em></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="subh2">5. Contact</h2>
+        <p>Pour toute question relative aux cookies, contactez :<br>
+        Jason Haudot — <a href="mailto:jasonhaudot@gmail.com">jasonhaudot@gmail.com</a></p>
+      </section>
+
+    </div>
+  </div>
+    <!-- Pied de page -->
+    <footer id="site-footer">
+        <nav>
+          <a href="/mentions-legales.html">Mentions légales</a>
+          <a href="/politique-cookies.html">Politique des cookies</a>
+          <a href="#top">Retour en haut</a>
+        </nav>
+      </footer>
+</body>
+</html>

@@ -105,3 +105,39 @@ document.querySelectorAll('[data-i18n="exp-content"] .comp-container').forEach(e
   if (hasScrolled) observer.observe(el);
   else pendingElements.push(el);
 });
+
+// COOKIES
+(function() {
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('accept-cookies');
+  const declineBtn = document.getElementById('decline-cookies');
+  const consent = localStorage.getItem('cookieConsent');
+
+  function hideBanner() {
+    banner.style.display = 'none';
+  }
+
+  function onAccept() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    hideBanner();
+    // ici, lancer vos scripts de traçage (analytics, etc.)
+  }
+
+  function onDecline() {
+    localStorage.setItem('cookieConsent', 'declined');
+    hideBanner();
+    // ne pas charger les scripts de traçage
+  }
+
+  acceptBtn.addEventListener('click', onAccept);
+  declineBtn.addEventListener('click', onDecline);
+
+  if (!consent) {
+    banner.style.display = 'flex';
+  } else {
+    // si déjà accepté, charger directement les scripts
+    if (consent === 'accepted') {
+      // lancer les scripts de traçage
+    }
+  }
+})();

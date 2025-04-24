@@ -441,4 +441,10 @@ footer {
     font-size: 2.4rem;
     margin-top: 5px;
   }
+  .tools-container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 30px;
+  }
 }

@@ -1,37 +1,51 @@
-/* === Base typographique (1rem = 10px) === */
+/* === 1. Base typographique & Réinitialisation === */
 html {
   font-size: 62.5%; /* 1rem = 10px */
 }
 
-
-/* === Réinitialisation générale et curseur personnalisé === */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-size: 1.6rem;
-  }
+}
 
-  
-/* === Structure de base du layout === */
-header {
-  height: 100vh;
-}
-button {
-  all: unset;
-}
-/* === Style global de la page === */
+/* === 2. Typographie globale === */
 body {
   font-family: 'Roboto Condensed', sans-serif;
   background-color: #F5F0E1;
   color: #D9C6A3;
 }
-/* === Gestion de l'affichage masqué/animé === */
-.hidden-on-desktop {
-  display: none;
+
+strong {
+  font-family: 'EB Garamond', serif;
+  color: #3E9CCC;
+  text-transform: uppercase;
+  text-shadow: 0px 1px 1px #2b2c36;
 }
 
-/* === Liens stylisés === */
+.subh2 {
+  border-bottom: 2px #3E9CCC solid;
+  color: #D9C6A3;
+  margin-top: 36px;
+  font-family: 'EB Garamond', serif;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  padding: 8px 48px 8px 16px;
+  min-height: 56px;
+  line-height: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* === 3. Éléments globaux & Liens === */
+button {
+  all: unset;
+}
+
 a {
   text-decoration: none;
   color: #3E9CCC;
@@ -47,40 +61,51 @@ a:hover {
   color: #ea413e;
 }
 
-/* === Style des textes forts === */
-strong {
-  font-family: 'EB Garamond', serif;
-  color: #3E9CCC ;
-  text-transform: uppercase;
-  text-shadow: 0px 1px 1px #2b2c36;
+/* === 4. En-tête et pied de page === */
+header {
+  height: 100vh;
 }
-/* === Pied de page === */
-footer{
+
+footer {
   background-color: #F5F0E1;
   height: 100px;
 }
 
-/* === Titres secondaires === */
-.subh2 {
-  border-bottom: 2px #3E9CCC solid;
-  color: #D9C6A3;
-  margin-top: 36px;
-  font-family: 'EB Garamond', serif;
-  font-size: 2.6rem;
-  text-transform: uppercase;
-  padding: 8px 48px 8px 16px;
-  min-height: 56px;
-  line-height: 1.2rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  position: relative;
-  justify-content: center;
+/* === 5. Utilitaires d'affichage === */
+.hidden-on-desktop {
+  display: none;
 }
 
-/* === HEADER / CONTACT SECTION === */
+.hidden-on-mobile {
+  display: block;
+}
 
-/* === Conteneur principal du header avec forme décorative === */
+.hidden {
+  display: flex;
+  flex-direction: column;
+  filter: blur(5px);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 3s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.content {
+  transition: all 1s ease;
+}
+
+.content.show:nth-child(1) { transition-delay: 100ms; }
+.content.show:nth-child(2) { transition-delay: 150ms; }
+.content.show:nth-child(3) { transition-delay: 200ms; }
+.content.show:nth-child(4) { transition-delay: 250ms; }
+.content.show:nth-child(5) { transition-delay: 300ms; }
+
+/* === 6. SECTION HEADER / CONTACT === */
 #contact-container {
   position: relative;
   height: 350px;
@@ -119,12 +144,9 @@ footer{
   overflow: hidden;
 }
 
-/* === FOND EN PLUMES + VIGNETTE === */
-
-/* === Fond animé en motif (header) === */
 #pattern-container {
-margin-top: 100;
-min-height: 50vh;
+  margin-top: 100;
+  min-height: 50vh;
   position: relative;
   overflow: hidden;
 }
@@ -144,7 +166,6 @@ min-height: 50vh;
   z-index: 0;
 }
 
-
 #contact-vignette {
   background: linear-gradient(circle, transparent 75%, #524336);
   position: absolute;
@@ -153,9 +174,6 @@ min-height: 50vh;
   z-index: 1;
 }
 
-/* === CONTENU HEADER === */
-
-/* === Contenu du header (photo, titre, langues, icônes) === */
 #contact-content {
   padding: 20px 20px 0 20px;
   position: relative;
@@ -166,7 +184,6 @@ min-height: 50vh;
   justify-content: center;
 }
 
-/* === Contenu du header (photo, titre, langues, icônes) === */
 #contact-content h1 {
   font-family: 'EB Garamond', serif;
   font-size: 3.6rem;
@@ -182,12 +199,8 @@ min-height: 50vh;
   border-radius: 50%;
   border: 10px dotted #D9C6A3;
   border-bottom: 5px solid #D9C6A3;
-
 }
 
-/* === LANGUAGES === */
-
-/* === Sélecteurs de langues === */
 #flags-container {
   display: flex;
   gap: 12px;
@@ -200,9 +213,6 @@ min-height: 50vh;
   border-radius: 4px;
 }
 
-/* === CONTACT ICONS === */
-
-/* === Liste des icônes de contact === */
 #contact-list {
   display: flex;
   gap: 12px;
@@ -224,126 +234,106 @@ min-height: 50vh;
   opacity: .7;
 }
 
-
-/* === Conteneur principal du CV === */
+/* === 7. SECTION CV / CONTENU PRINCIPAL === */
 #cv-container {
-    position: relative;
-    background-color: #4A4E69;
-    padding: 5px;
-    z-index: 0;
-min-height: 120px;      /* Assure que le clip-path est visible */
-padding-bottom: 120px;   /* Espace entre contenu et la "découpe" */
-margin-top: -25px;
-
+  position: relative;
+  background-color: #4A4E69;
+  padding: 5px;
+  z-index: 0;
+  min-height: 120px;
+  padding-bottom: 120px;
+  margin-top: -37px;
 }
-/* === Fond décoratif du CV === */
+
 #cv-pattern {
-    background-image: url('/images/pattern.svg');
-    background-repeat: repeat;
-    mix-blend-mode: multiply;
-    opacity: .25;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: cvpan 300s linear infinite;
-    z-index: 0;
+  background-image: url('/images/pattern.svg');
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  opacity: .25;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: cvpan 300s linear infinite;
+  z-index: 0;
 }
-/* === Contenu central du CV (sections) === */
+
 #cv-content {
-    padding: 0px 50px 5px 50px;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 80%;
-    justify-content: center;
-    min-height: 50vh;
-    flex-wrap: wrap;
-    text-align: left;
-    background-color: transparent;
-
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 10px;
+  width: 80%;
+  flex-wrap: wrap;
+  text-align: left;
+  background-color: transparent;
+  padding: 0px 50px 5px 50px;
+  min-height: 50vh;
 }
-/* === Contenu central du CV (sections) === */
-#cv-content p{
-    margin-top: 8px ;
-    text-align: justify;
 
+#cv-content p {
+  margin-top: 8px;
+  text-align: justify;
 }
-/* === Contenu central du CV (sections) === */
+
 #cv-content h2 {
-    font-family: "EB Garamond", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 3.6rem;
-    text-transform: uppercase;
-    color: #D9C6A3;
-    margin-top: 20px;
-
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  color: #D9C6A3;
+  margin-top: 20px;
 }
 
-/* === Contenu central du CV (sections) === */
 #cv-content::before {
-    font-family: "EB Garamond", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 7.2rem;
-    color: #D9C6A3;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-
-    content: "“";
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 7.2rem;
+  color: #D9C6A3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "“";
 }
 
-/* === Contenu central du CV (sections) === */
 #cv-content::after {
-    font-family: "EB Garamond", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 7.2rem;
-    color: #D9C6A3;
-    content: "”";
-    position: absolute;
-    bottom: -25px;
-    right: 0%;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 7.2rem;
+  color: #D9C6A3;
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+  content: "”";
 }
-/* === Bloc contenant les compétences ou atouts === */
+
 .comp-container {
-padding: 10px;
-border: 3px #2B2C36 solid;
-margin: 10px auto 10px auto;
-background-color: #F5F0E1;
+  width: 90%;
+  padding: 10px;
+  border: 3px #2b2c36 solid;
+  margin: 10px auto;
+  background-color: #F5F0E1;
 }
-/* === Bloc contenant les compétences ou atouts === */
+
 .comp-container h3 {
   color: #8B2C2A;
 }
+
 .comp-container p {
   color: #2B2C36;
 }
+
 .competenceatout {
   width: 40%;
 }
-/* === Gestion de l'affichage masqué/animé === */
-.hidden-on-mobile {
-  display: block;
-}
 
-/* === Gestion de l'affichage masqué/animé === */
-.hidden {
-  
-  display: flex;
-  flex-direction: column  ;
-  filter: blur(5px);
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: all 3s;
-}
-/* === Disposition des compétences/atouts côte à côte === */
 .flexcompt {
   display: flex;
   justify-content: space-around;
@@ -351,155 +341,65 @@ background-color: #F5F0E1;
   align-items: center;
 }
 
-/* === État visible animé d’un bloc caché === */
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-}
-.content {
-  transition: all 1s ease;
-}
-/* === État visible animé d’un bloc caché === */
-.content.show:nth-child(1) {
-  transition-delay: 100ms;
-}
-/* === État visible animé d’un bloc caché === */
-.content.show:nth-child(2) {
-  transition-delay: 150ms;
-}
-/* === État visible animé d’un bloc caché === */
-.content.show:nth-child(3) {
-  transition-delay: 200ms;
-}
-/* === État visible animé d’un bloc caché === */
-.content.show:nth-child(4) {
-  transition-delay: 250ms;
-}
-/* === État visible animé d’un bloc caché === */
-.content.show:nth-child(5) {
-  transition-delay: 300ms;
+/* === 8. Animations & Accessibilité === */
+@keyframes pan {
+  from { background-position: 0 0; }
+  to   { background-position: 199% 0; }
 }
 
-/* === Contenu central du CV (sections) === */
-    #cv-content {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        margin: auto;
-        width: 100%;
-        flex-wrap: wrap;
-        text-align: left;
-    }
-/* === Contenu central du CV (sections) === */
-    #cv-content h2 {
-        font-family: "EB Garamond", serif;
-        font-optical-sizing: auto;
-        font-style: normal;
-        font-size: 2.4rem;
-        text-transform: uppercase;
-        color: #D9C6A3;
-        margin-top: 5px;
-    
-    }
-/* === Bloc contenant les compétences ou atouts === */
-    .comp-container {
-      width: 90%;
-      padding: 10px;
-      border: 3px #2b2c36 solid;
-      margin: 10px auto 10px auto;
-      }
-/* === Bloc contenant les compétences ou atouts === */
-      .comp-container h3 {
-        color: #8B2C2A;
-      }
-
-
-  #cv-container {
-    min-height: 120px;      /* Assure que le clip-path est visible */
-    padding-bottom: 250px;   /* Espace entre contenu et la "découpe" */
-    margin-top: -25px;
-margin-top: -37px;}
-
-
-
-
-
-  /* === Accessibilité : désactive les animations si préférée === */
-@media(prefer-reduced-motion){
-  .animation-slide {
-  transition: none;
-  }
-}
-/* === Animation horizontale de fond CV (cvpan) === */
 @keyframes cvpan {
-  from {
-    background-position: 199% 0;
-  }
-  to {
-    background-position: 0% 0;
-  }
-
-  }
-/* === Animation horizontale de fond (pan) === */
-  @keyframes pan {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: 199% 0;
-    }
-  }
-  
-
-/* === Adaptation responsive pour mobile (max 450px) === */
-  @media (max-width: 450px) {
-/* === Conteneur principal du header avec forme décorative === */
-/* === Fond décoratif du CV === */
-#cv-pattern {
-  background-image: url('/images/pattern.svg');
-  background-repeat: repeat;
-  mix-blend-mode: multiply;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: cvpan 50s linear infinite;
-  z-index: 0;
-}
-#contact-pattern {
-  animation: pan 40s linear infinite;
+  from { background-position: 199% 0; }
+  to   { background-position: 0% 0; }
 }
 
-    #custom-cursor{
-     display: none;
-      }    
-    #contact-container {
-      height: 350px;
-      clip-path: polygon(
-        0% 0%, 100% 0%, 100% 93%,
-        95.83% 90%, 91.66% 93%, 87.5% 90%,
-        83.33% 93%, 79.16% 90%, 75% 93%,
-        70.83% 90%, 66.66% 93%, 62.5% 90%,
-        58.33% 93%, 54.16% 90%, 50% 93%,
-        45.83% 90%, 41.66% 93%, 37.5% 90%,
-        33.33% 93%, 29.16% 90%, 25% 93%,
-        20.83% 90%, 16.66% 93%, 12.5% 90%,
-        8.33% 93%, 4.16% 90%, 0% 93%
-      );
-      
-    }
-    /* === Gestion de l'affichage masqué/animé === */
+@media (prefer-reduced-motion) {
+  .animation-slide {
+    transition: none;
+  }
+}
+
+/* === 9. Réactivité Mobile (max-width: 450px) === */
+@media (max-width: 450px) {
+  #custom-cursor {
+    display: none;
+  }
+  #contact-container {
+    height: 350px;
+    clip-path: polygon(
+      0% 0%, 100% 0%, 100% 93%,
+      95.83% 90%, 91.66% 93%, 87.5% 90%,
+      83.33% 93%, 79.16% 90%, 75% 93%,
+      70.83% 90%, 66.66% 93%, 62.5% 90%,
+      58.33% 93%, 54.16% 90%, 50% 93%,
+      45.83% 90%, 41.66% 93%, 37.5% 90%,
+      33.33% 93%, 29.16% 90%, 25% 93%,
+      20.83% 90%, 16.66% 93%, 12.5% 90%,
+      8.33% 93%, 4.16% 90%, 0% 93%
+    );
+  }
+  #contact-pattern {
+    animation: pan 40s linear infinite;
+  }
+  #cv-pattern {
+    animation: cvpan 50s linear infinite;
+  }
+  #cv-content{
+    width: 98%;
+  }
   .hidden-on-mobile {
     display: none;
   }
-  /* === Gestion de l'affichage masqué/animé === */
   .hidden-on-desktop {
     display: block;
   }
-  .subh2{
+  .subh2 {
     justify-content: left;
   }
-    }    
+  #cv-container {
+    padding-bottom: 250px;
+  }
+  #cv-content h2 {
+    font-size: 2.4rem;
+    margin-top: 5px;
+  }
+}

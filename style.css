@@ -41,6 +41,19 @@ strong {
   position: relative;
 }
 
+.subh3 {
+  color: #D9C6A3;
+  font-family: 'EB Garamond', serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 2px #3E9CCC solid;
+}
+
 /* === 3. Éléments globaux & Liens === */
 button {
   all: unset;
@@ -330,7 +343,7 @@ footer {
 }
 
 .competenceatout {
-  width: 40%;
+  width: 50%;
 }
 
 .flexcompt {
@@ -344,6 +357,7 @@ footer {
 .tools-container{
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 .tools{
   display: flex;

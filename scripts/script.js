@@ -105,28 +105,3 @@ document.querySelectorAll('[data-i18n="exp-content"] .comp-container').forEach(e
   if (hasScrolled) observer.observe(el);
   else pendingElements.push(el);
 });
-
-// COOKIES
-(function() {
-  const banner = document.getElementById('cookie-banner');
-  const acceptBtn = document.getElementById('accept-cookies');
-  const declineBtn = document.getElementById('decline-cookies');
-  const consent = localStorage.getItem('cookieConsent');
-
-  // n’affiche le banner que si l’utilisateur n’a jamais répondu
-  if (!consent) {
-    banner.style.display = 'flex';
-  }
-
-  // au clic, on stocke la réponse et on cache toujours
-  function onChoice(answer) {
-    localStorage.setItem('cookieConsent', answer);
-    banner.style.display = 'none';
-    if (answer === 'accepted') {
-      // lancer les scripts de traçage
-    }
-  }
-
-  acceptBtn.addEventListener('click', () => onChoice('accepted'));
-  declineBtn.addEventListener('click', () => onChoice('declined'));
-})();

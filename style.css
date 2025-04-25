@@ -438,7 +438,8 @@ footer {
 footer#site-footer {
   border-top: 2px solid #3E9CCC;
   background-color: #2B2C36;
-  padding: 20px 0;
+padding: 20px;
+height: fit-content;
 }
 
 footer#site-footer nav {
@@ -524,5 +525,9 @@ footer#site-footer nav a:hover {
     justify-content: center;
     margin: auto;
     padding: 30px;
+  }
+  footer#site-footer nav a {
+    font-size: 1.2rem;
+    text-align: center;
   }
 }
